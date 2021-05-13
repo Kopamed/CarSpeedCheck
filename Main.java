@@ -1,11 +1,4 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
+import java.util.Scanner;
 
 // 13/05/2021
 // First ever java code less gooo!
@@ -16,6 +9,14 @@ public class Main
     int minSpeed = 3;
     String units = "km/h";
     boolean moving = false;
+    
+    public String inputString(String prompt) {
+        Scanner inputln = new Scanner(System.in);
+        
+        System.out.println(prompt);
+        String output = inputln.nextLine();
+        return output;
+    }
     
     public void fullThrust() {
         this.speed = this.maxSpeed;
@@ -60,20 +61,14 @@ public class Main
     
 	public static void main(String[] args) {
 		Main car;
+		
 		car = new Main();
 		
-		car.logInfo();
-		
-		car.toggleMoving();
-		car.setSpeed(110);
+		String prompt = "What would you like the new uints to be? e.g. km/h";
+		car.units = car.inputString(prompt);
 		
 		car.logInfo();
 		
-		car.setSpeed(200);
-		car.logInfo();
-		
-		car.fullThrust()
-		car.logInfo()
 	}
 }
 
